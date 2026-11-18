@@ -1,5 +1,5 @@
 name: Webserver
-version: "1.0.0"
+version: "1.0.1"
 slug: webserver
 description: nginx + PHP, Inhalte aus /share/web, Sperrseite für AdGuard
 arch:
