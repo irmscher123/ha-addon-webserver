@@ -11,6 +11,13 @@ if [ ! -e "$B" ] || grep -q "auto-blockpage" "$B" || grep -q "background: #14171
   cp /defaults/_blocked/index.html "$B"
 fi
 
+Z="$WEB/zertifikat.html"
+if [ ! -e "$Z" ] || grep -q "auto-blockpage" "$Z"; then
+  cp /defaults/zertifikat.html "$Z"
+fi
+
 echo "[webserver] Webroot: $WEB"
+# HTTPS-Sperrseite (Port 443) mit lokaler CA; Fehler hier stoppen den Webserver nicht
+python3 /tls_blockproxy.py &
 php-fpm83 -D
 exec nginx -g 'daemon off;'

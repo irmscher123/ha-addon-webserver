@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- auto-blockpage: Diese Zeile entfernen, damit die Datei bei Add-on-Updates nicht ersetzt wird -->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heimnetz-Zertifikat installieren</title>
+<style>
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f2f3f5; color: #1a1a1a; }
+  main { max-width: 680px; margin: 0 auto; padding: 28px 20px 48px; }
+  h1 { font-size: 26px; margin: 0 0 8px; }
+  .lead { color: #444; line-height: 1.5; margin: 0 0 20px; }
+  .dl { display: inline-block; background: #d7262f; color: #fff; text-decoration: none; font-weight: 700; padding: 14px 24px; border-radius: 12px; font-size: 17px; }
+  section { background: #fff; border-radius: 14px; padding: 18px 22px; margin-top: 16px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+  h2 { font-size: 18px; margin: 0 0 8px; }
+  ol { margin: 0; padding-left: 20px; line-height: 1.6; }
+  .note { font-size: 14px; color: #555; margin-top: 20px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<main>
+  <h1>🔐 Heimnetz-Zertifikat installieren</h1>
+  <p class="lead">Damit gesperrte Seiten auch bei <b>https://</b> sauber die Sperrseite zeigen statt einer Fehlermeldung, muss dieses Zertifikat einmal pro Gerät installiert werden.</p>
+  <a class="dl" href="/ca.crt" download="Heimnetz-CA.crt">Zertifikat herunterladen</a>
+
+  <section><h2>Windows</h2><ol>
+    <li>Datei <b>Heimnetz-CA.crt</b> doppelklicken → <b>Zertifikat installieren</b></li>
+    <li><b>Lokaler Computer</b> → Weiter</li>
+    <li><b>Alle Zertifikate in folgendem Speicher speichern</b> → <b>Vertrauenswürdige Stammzertifizierungsstellen</b></li>
+    <li>Fertigstellen, Browser neu starten</li>
+  </ol></section>
+
+  <section><h2>Android</h2><ol>
+    <li>Zertifikat herunterladen</li>
+    <li><b>Einstellungen → Sicherheit → Weitere Sicherheitseinstellungen → Zertifikat installieren → CA-Zertifikat</b> (je nach Hersteller etwas anders benannt; in den Einstellungen nach „Zertifikat“ suchen)</li>
+    <li>„Trotzdem installieren“ bestätigen und die heruntergeladene Datei wählen</li>
+  </ol></section>
+
+  <section><h2>iPhone / iPad</h2><ol>
+    <li>Diese Seite in <b>Safari</b> öffnen, Zertifikat herunterladen → „Zulassen“</li>
+    <li><b>Einstellungen → Profil geladen → Installieren</b></li>
+    <li><b>Einstellungen → Allgemein → Info → Zertifikatsvertrauenseinstellungen</b> → „Heimnetz Sperrseite CA“ einschalten</li>
+  </ol></section>
+
+  <section><h2>macOS</h2><ol>
+    <li>Datei doppelklicken → wird in der <b>Schlüsselbundverwaltung</b> geöffnet</li>
+    <li>Zertifikat „Heimnetz Sperrseite CA“ doppelklicken → <b>Vertrauen → Immer vertrauen</b></li>
+  </ol></section>
+
+  <p class="note">Firefox verwendet unter Windows und macOS standardmäßig das Systemzertifikat. Falls nicht: Firefox → Einstellungen → Datenschutz &amp; Sicherheit → Zertifikate anzeigen → Zertifizierungsstellen → Importieren.<br>
+  Das Zertifikat wird nur im Heimnetz verwendet und ausschließlich für die Sperrseite erzeugt.</p>
+</main>
+</body>
+</html>

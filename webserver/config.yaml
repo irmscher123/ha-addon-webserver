@@ -1,5 +1,5 @@
 name: Webserver
-version: "1.1.0"
+version: "1.2.0"
 slug: webserver
 description: nginx + PHP, Inhalte aus /share/web, Sperrseite für AdGuard
 arch:
@@ -12,5 +12,7 @@ map:
   - share:rw
 ports:
   80/tcp: 80
+  443/tcp: 443
 ports_description:
   80/tcp: HTTP
+  443/tcp: HTTPS-Sperrseite (lokale CA)
